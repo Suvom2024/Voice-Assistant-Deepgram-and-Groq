@@ -17,7 +17,7 @@ def batch():
 
 # Streaming
 def streaming():
-    chat = ChatGroq(temperature=0, model_name="llama2-70b-4096",groq_api_key=os.getenv("GROQ_API_KEY"))
+    chat = ChatGroq(temperature=0, model_name="Mixtral-8x7b-32768",groq_api_key=os.getenv("GROQ_API_KEY"))
     prompt = ChatPromptTemplate.from_messages([("human", "Write a very long poem about {topic}")])
     chain = prompt | chat
     for chunk in chain.stream({"topic": "The Moon"}):
